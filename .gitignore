@@ -26,4 +26,3 @@ hs_err_pid*
 target/
 gradle/
 project/target
-gradlew*
