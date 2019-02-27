@@ -17,4 +17,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.apache.kafka:kafka-streams'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation group: 'org.springframework', name: 'spring-web', version: '5.1.5.RELEASE'
 }

@@ -1,4 +1,4 @@
-package com.github.mackoko.kafka.producer.user;
+package com.github.mackoko.kafka.user.producer;
 
 public class UserProducer {
 
@@ -7,7 +7,6 @@ public class UserProducer {
 	public UserProducer(int userCount) {
 		this.userCount = userCount;
 	}
-
 
 	public void produce() {
 		System.out.println(this.userCount);
