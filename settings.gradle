@@ -1,2 +1,6 @@
-rootProject.name = 'kafka-tutorial'
-
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+rootProject.name = 'producer'
