@@ -1,14 +1,25 @@
 package com.github.mackoko.kafka.user.producer;
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.github.mackoko.kafka.user.gatherer.UserGatherer;
+
+
 public class UserProducer {
+	private final Logger logger = LoggerFactory.getLogger(UserProducer.class.getName());
 
-	private final int userCount;
+	private final UserGatherer userGatherer;
 
-	public UserProducer(int userCount) {
-		this.userCount = userCount;
+	public UserProducer(UserGatherer userGatherer) {
+		this.userGatherer = userGatherer;
 	}
 
-	public void produce() {
-		System.out.println(this.userCount);
+	public void produce(int userCount) {
+		logger.info("Gathering users");
+		List<String> randomUsers = userGatherer.getRandomUsers(userCount);
+		logger.info("Users gathered");
 	}
 }
