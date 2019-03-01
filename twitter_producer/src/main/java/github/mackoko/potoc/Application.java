@@ -7,14 +7,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import github.mackoko.potoc.user.producer.UserProducer;
+import github.mackoko.potoc.twitter.producer.TwitterProducer;
 
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
 
 	@Autowired
-	private UserProducer userProducer;
+	private TwitterProducer twitterProducer;
 
 	private static Logger LOG = LoggerFactory.getLogger(Application.class);
 
@@ -27,6 +27,7 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 		LOG.info("EXECUTING : command line runner");
-		userProducer.produce(10);
+//		userProducer.produce(10);
+		twitterProducer.printTweets();
 	}
 }

@@ -1,11 +1,11 @@
-package github.mackoko.potoc.user.producer;
+package github.mackoko.potoc.randomuser.producer;
 
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import github.mackoko.potoc.user.gatherer.UserGatherer;
+import github.mackoko.potoc.randomuser.gatherer.UserGatherer;
 
 
 public class UserProducer {
