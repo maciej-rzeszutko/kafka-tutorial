@@ -1,11 +1,11 @@
-package potoc.user.producer;
+package github.mackoko.potoc.user.producer;
 
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import potoc.user.gatherer.UserGatherer;
+import github.mackoko.potoc.user.gatherer.UserGatherer;
 
 
 public class UserProducer {
