@@ -28,6 +28,6 @@ public class Application implements CommandLineRunner {
 	public void run(String... args) {
 		LOG.info("EXECUTING : command line runner");
 //		userProducer.produce(10);
-		twitterProducer.printTweets();
+		twitterProducer.produceTweets();
 	}
 }
