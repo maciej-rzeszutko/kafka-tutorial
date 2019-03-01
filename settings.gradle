@@ -4,3 +4,5 @@ pluginManagement {
 	}
 }
 rootProject.name = 'potoc'
+include 'twitter_producer'
+

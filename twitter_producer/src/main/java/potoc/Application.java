@@ -1,4 +1,4 @@
-package com.github.mackoko.potoc;
+package potoc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,7 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.github.mackoko.potoc.user.producer.UserProducer;
+import potoc.user.producer.UserProducer;
+
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {

@@ -1,4 +1,4 @@
-package com.github.mackoko.potoc.user.gatherer;
+package potoc.user.gatherer;
 
 
 import static java.util.stream.Collectors.toList;

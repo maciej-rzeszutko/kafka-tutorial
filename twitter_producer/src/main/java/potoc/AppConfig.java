@@ -1,10 +1,11 @@
-package com.github.mackoko.potoc;
+package potoc;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.github.mackoko.potoc.user.gatherer.UserGatherer;
-import com.github.mackoko.potoc.user.producer.UserProducer;
+import potoc.user.gatherer.UserGatherer;
+import potoc.user.producer.UserProducer;
+
 
 @Configuration
 public class AppConfig {
