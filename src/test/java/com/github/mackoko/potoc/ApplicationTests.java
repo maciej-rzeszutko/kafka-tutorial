@@ -1,4 +1,4 @@
-package com.github.mackoko.kafka;
+package com.github.mackoko.potoc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

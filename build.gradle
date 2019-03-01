@@ -5,7 +5,7 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.github.mackoko.kafka.producer'
+group = 'com.github.mackoko.potoc'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -14,9 +14,11 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.apache.kafka:kafka-streams'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation group: 'org.springframework', name: 'spring-web', version: '5.1.5.RELEASE'
+	implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '2.1.1'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

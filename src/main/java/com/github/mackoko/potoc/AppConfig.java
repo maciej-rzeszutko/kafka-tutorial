@@ -1,11 +1,10 @@
-package com.github.mackoko.kafka;
+package com.github.mackoko.potoc;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.github.mackoko.kafka.user.gatherer.UserGatherer;
-import com.github.mackoko.kafka.user.producer.UserProducer;
+import com.github.mackoko.potoc.user.gatherer.UserGatherer;
+import com.github.mackoko.potoc.user.producer.UserProducer;
 
 @Configuration
 public class AppConfig {

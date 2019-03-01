@@ -1,4 +1,4 @@
-package com.github.mackoko.kafka.user.gatherer;
+package com.github.mackoko.potoc.user.gatherer;
 
 
 import static java.util.stream.Collectors.toList;
