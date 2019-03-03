@@ -1,5 +1,7 @@
-kafka-topics --zookeeper 127.0.0.1:2181 --create --topic twitter_tweets --partitions 6 --replication-factor 1
+kafka-topics --zookeeper 127.0.0.1:2181 --create --topic twitter_tweets --partitions 3 --replication-factor 1
 kafka-topics --zookeeper 127.0.0.1:2181 --topic second_topic --delete // it is better to create new then delete and create
+
+
 
 kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic
 
@@ -7,3 +9,5 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic twitter_tweets
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning // --partition 0
 
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --consumer-property group.id=mygroup1 --from-beginning // if group id was used, offset is moved to the end so calling this once more will not retrieve messages from beginning
+
+
