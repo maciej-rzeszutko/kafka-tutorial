@@ -29,7 +29,7 @@ public class TwitterProducer {
 	private final Logger logger = LoggerFactory.getLogger(TwitterProducer.class);
 
 	private final Authentication twitterAuthentication;
-	private final List<String> terms = Lists.newArrayList("bitcoin");
+	private final List<String> terms = Lists.newArrayList("bitcoin", "politics", "sport", "religion");
 
 	public TwitterProducer(Authentication twitterAuthentication) {
 		this.twitterAuthentication = twitterAuthentication;
