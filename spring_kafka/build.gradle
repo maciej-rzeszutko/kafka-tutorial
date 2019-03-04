@@ -9,10 +9,10 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-
-    implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '2.1.1'
-    implementation group: 'com.twitter', name: 'hbc-core', version: '2.2.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.apache.kafka:kafka-streams'
+    implementation 'org.springframework.kafka:spring-kafka'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.kafka:spring-kafka-test'
 }
