@@ -7,4 +7,5 @@ rootProject.name = 'potoc'
 include 'twitter_producer'
 include 'elasticsearch_consumer'
 include 'spring_kafka'
+include 'avro_kafka'
 

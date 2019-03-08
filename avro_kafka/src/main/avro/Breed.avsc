@@ -1,0 +1,6 @@
+{
+    "name": "Breed",
+    "namespace": "com.github.mackoko.avro",
+    "type": "enum",
+    "symbols" : ["ABYSSINIAN", "AMERICAN_SHORTHAIR", "BIRMAN", "MAINE_COON", "ORIENTAL", "PERSIAN", "RAGDOLL", "SIAMESE", "SPHYNX"]
+}
