@@ -18,6 +18,8 @@ dependencies {
 }
 
 avro {
+    stringType = "String"
+    enableDecimalLogicalType = true
     createSetters = false
     fieldVisibility = "PRIVATE"
 }
