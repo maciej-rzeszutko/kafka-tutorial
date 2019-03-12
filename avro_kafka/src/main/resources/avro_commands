@@ -1,0 +1,1 @@
+docker run -it --rm --net=host landoop/fast-data-dev:2.1.0 bash
