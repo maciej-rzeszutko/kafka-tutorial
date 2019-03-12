@@ -1,1 +1,22 @@
 docker run -it --rm --net=host landoop/fast-data-dev:2.1.0 bash
+
+# Produce a record with one field
+kafka-avro-console-producer --broker-list http://127.0.0.1:9092 --topic test-avro --property schema.registry.url=http://127.0.0.1:8081 --property value.schema='{"type" : "record", "name": "my_record", "fields": [{"name": "f1", "type": "string"}]}'
+
+{"f1":"value1"}
+
+# throws exception
+{"f2":"asd"}
+{"f2":1}
+
+
+# Consume records from the beginning of the topic
+kafka-avro-console-consumer --topic test-avro --bootstrap-server http://127.0.0.1:9092 --property schema.registry.url=http://127.0.0.1:8081 --from-beginning
+
+# Schema evolution
+kafka-avro-console-producer --broker-list http://127.0.0.1:9092 --topic test-avro \
+--property schema.registry.url=http://127.0.0.1:8081 \
+--property value.schema='{"type" : "record", "name": "my_record", "fields": [{"name": "f1", "type": "string"}, {"name": "f2", "type": "int", "default": 0}]}'
+
+{"f1":"value1", "f2": 1}
+
