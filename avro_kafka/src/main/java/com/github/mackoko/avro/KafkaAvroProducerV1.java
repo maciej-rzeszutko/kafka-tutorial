@@ -27,7 +27,7 @@ public class KafkaAvroProducerV1 {
 
 		Customer customer = Customer.newBuilder()
 				.setFirstName("John")
-				.setLastName("Doe")
+				.setLastName("Boe")
 				.setAge(28)
 				.setHeight(180.0f)
 				.setWeight(100.0f)
