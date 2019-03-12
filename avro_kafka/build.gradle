@@ -10,16 +10,28 @@ buildscript {
 apply plugin: "java"
 apply plugin: "com.commercehub.gradle.plugin.avro"
 
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
-dependencies {
-    implementation group: 'org.apache.avro', name: 'avro', version: '1.8.2'
-}
-
 avro {
     stringType = "String"
     enableDecimalLogicalType = true
     createSetters = false
     fieldVisibility = "PRIVATE"
+}
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    maven { url 'http://packages.confluent.io/maven/' }
+}
+
+ext {
+    confluentVersion = '5.1.2'
+    avroVersion = '1.8.2'
+    kafkaVersion = '2.1.1'
+}
+
+dependencies {
+    implementation group: 'org.apache.avro', name: 'avro', version: avroVersion
+    implementation group: 'org.apache.kafka', name: 'kafka-clients', version: kafkaVersion
+    implementation group: 'io.confluent', name: 'kafka-avro-serializer', version: confluentVersion
 }

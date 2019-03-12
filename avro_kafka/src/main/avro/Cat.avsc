@@ -1,9 +1,0 @@
-{
-    "name": "Cat",
-    "namespace": "com.github.mackoko.avro",
-    "type": "record",
-    "fields" : [
-        {"name": "name", "type": "string"},
-        {"name": "breed", "type": "com.github.mackoko.avro.Breed"}
-    ]
-}
