@@ -12,6 +12,8 @@ services:
     environment:
       ADV_HOST: 127.0.0.1
       KAFKA_REST_CONSUMER_REQUEST_TIMEOUT_MS: 30000
+#      SAMPLEDATA: 0
+#      RUNTESTS: 0
   elk:
     container_name: "elk"
     image: sebp/elk:660
