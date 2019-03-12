@@ -13,7 +13,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 
-public class KafkaAvroConsumerV1 {
+public class KafkaAvroConsumer {
 
 	public static void main(String[] args) {
 		String bootstrapServers = "127.0.0.1:9092";

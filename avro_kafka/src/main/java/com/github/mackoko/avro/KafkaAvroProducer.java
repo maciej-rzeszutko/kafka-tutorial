@@ -11,7 +11,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
 
-public class KafkaAvroProducerV1 {
+public class KafkaAvroProducer {
 	public static void main(String[] args) {
 		Properties properties = new Properties();
 		properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "http://127.0.0.1:9092");
@@ -31,6 +31,8 @@ public class KafkaAvroProducerV1 {
 				.setAge(28)
 				.setHeight(180.0f)
 				.setWeight(100.0f)
+				.setPhoneNumber("123")
+				.setEmail("foobar@foo.bar")
 				.build();
 
 		ProducerRecord<String, Customer> producerRecord = new ProducerRecord<>(topic, customer);
