@@ -1,6 +1,7 @@
 package com.github.mackoko.avro;
 
 
+import java.util.Collections;
 import java.util.Properties;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -33,6 +34,7 @@ public class KafkaAvroProducer {
 				.setWeight(100.0f)
 				.setPhoneNumber("123")
 				.setEmail("foobar@foo.bar")
+				.setChildren(Collections.emptyList())
 				.build();
 
 		ProducerRecord<String, Customer> producerRecord = new ProducerRecord<>(topic, customer);
