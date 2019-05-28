@@ -1,6 +1,6 @@
 {
      "type": "record",
-     "namespace": "com.github.mackoko.avro",
+     "namespace": "com.github.mackoko.avro.customer",
      "name": "Customer",
      "version": "1",
      "fields": [

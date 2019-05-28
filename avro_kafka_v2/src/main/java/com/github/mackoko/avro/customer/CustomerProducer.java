@@ -10,8 +10,6 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 
-import com.github.mackoko.avro.Customer;
-
 public class CustomerProducer {
 	public static void main(String[] args) {
 		KafkaProducer<String,Customer> kafkaProducer = new KafkaProducer<>(producerProperties());

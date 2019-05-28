@@ -1,0 +1,30 @@
+[
+  {
+    "version": "1",
+    "type": "enum",
+    "namespace": "com.github.mackoko.avro.enums",
+    "name": "EnumWillBeAdded",
+    "symbols" : ["ONE", "TWO"]
+  },
+  {
+    "version": "1",
+    "type": "enum",
+    "namespace": "com.github.mackoko.avro.enums",
+    "name": "EnumWillBeRemoved",
+    "symbols" : ["ONE", "TWO"]
+  },
+  {
+    "version": "1",
+    "type": "enum",
+    "namespace": "com.github.mackoko.avro.enums",
+    "name": "EnumWillBeRenamed",
+    "symbols" : ["ONE", "TWO"]
+  },
+  {
+    "version": "1",
+    "type": "enum",
+    "namespace": "com.github.mackoko.avro.enums",
+    "name": "EnumWillSwitchOrder",
+    "symbols" : ["ONE", "TWO"]
+  }
+]

@@ -11,8 +11,6 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 
-import com.github.mackoko.avro.Customer;
-
 public class CustomerConsumer {
 
 	public static void main(String[] args) {
