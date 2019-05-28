@@ -1,21 +1,37 @@
-package com.github.mackoko.avro;
+package com.github.mackoko.avro.util;
 
-
-import java.time.Duration;
-import java.util.Collections;
 import java.util.Properties;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.clients.consumer.ConsumerRecords;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.apache.kafka.common.serialization.StringSerializer;
 
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
+import io.confluent.kafka.serializers.KafkaAvroSerializer;
 
-public class KafkaAvroConsumer {
+public class PropertyUtil {
 
-	public static void main(String[] args) {
+	public static final String TOPIC_CUSTOMER = "customer-avro";
+
+	private PropertyUtil() {
+
+	}
+
+	public static Properties producerProperties() {
+		Properties properties = new Properties();
+		properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "http://127.0.0.1:9092");
+		properties.setProperty(ProducerConfig.ACKS_CONFIG, "1");
+		properties.setProperty(ProducerConfig.RETRIES_CONFIG, "10");
+
+		properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+		properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
+		properties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
+
+		return properties;
+	}
+
+	public static Properties consumerProperties() {
 		String bootstrapServers = "127.0.0.1:9092";
 		String groupId = "my-avro-consumer";
 		// create consumer configs
@@ -31,22 +47,6 @@ public class KafkaAvroConsumer {
 		properties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
 		properties.setProperty("specific.avro.reader", "true");
 
-		KafkaConsumer<String, Customer> consumer = new KafkaConsumer<>(properties);
-		String topic = "customer-avro";
-
-		consumer.subscribe(Collections.singleton(topic));
-
-		System.out.println("Waiting for data");
-
-		while (true) {
-			ConsumerRecords<String, Customer> records = consumer.poll(Duration.ofMillis(500));
-			for (ConsumerRecord<String, Customer> record : records) {
-				Customer customer = record.value();
-				System.out.println(customer);
-			}
-			consumer.commitSync();
-		}
-
-//		consumer.close();
+		return properties;
 	}
 }
