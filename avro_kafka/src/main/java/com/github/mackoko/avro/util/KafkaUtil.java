@@ -3,21 +3,26 @@ package com.github.mackoko.avro.util;
 import java.util.Properties;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
+import io.confluent.kafka.serializers.subject.TopicRecordNameStrategy;
 
-public class PropertyUtil {
+public class KafkaUtil {
 
 	public static final String TOPIC_CUSTOMER = "customer-avro";
+	public static final String TOPIC_ENUMS = "enums-avro";
 
-	private PropertyUtil() {
+	private KafkaUtil() {
 
 	}
-
+//     "[value.subject.name.strategy]": io.confluent.kafka.serializers.subject.RecordNameStrategy
 	public static Properties producerProperties() {
 		Properties properties = new Properties();
 		properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "http://127.0.0.1:9092");
@@ -26,6 +31,8 @@ public class PropertyUtil {
 
 		properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 		properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class.getName());
+		properties.setProperty("value.subject.name.strategy", TopicRecordNameStrategy.class.getName());
+
 		properties.setProperty("schema.registry.url", "http://127.0.0.1:8081");
 
 		return properties;
@@ -48,5 +55,21 @@ public class PropertyUtil {
 		properties.setProperty("specific.avro.reader", "true");
 
 		return properties;
+	}
+
+	public static <T> void sendAndClose(
+			KafkaProducer<String,T> kafkaProducer,
+			ProducerRecord<String,T> producerRecord) {
+		kafkaProducer.send(producerRecord, (RecordMetadata metadata, Exception exception) -> {
+			if (exception == null) {
+				System.out.println("Sucess!");
+				System.out.println(metadata.toString());
+			} else {
+				exception.printStackTrace();
+			}
+		});
+
+		kafkaProducer.flush();
+		kafkaProducer.close();
 	}
 }

@@ -1,14 +1,14 @@
 package com.github.mackoko.avro.customer;
 
 
-import static com.github.mackoko.avro.util.PropertyUtil.TOPIC_CUSTOMER;
-import static com.github.mackoko.avro.util.PropertyUtil.producerProperties;
+import static com.github.mackoko.avro.util.KafkaUtil.TOPIC_CUSTOMER;
+import static com.github.mackoko.avro.util.KafkaUtil.producerProperties;
+import static com.github.mackoko.avro.util.KafkaUtil.sendAndClose;
 
 import java.util.Collections;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.clients.producer.RecordMetadata;
 
 public class CustomerProducer {
 	public static void main(String[] args) {
@@ -27,16 +27,6 @@ public class CustomerProducer {
 
 		ProducerRecord<String,Customer> producerRecord = new ProducerRecord<>(TOPIC_CUSTOMER, customer);
 
-		kafkaProducer.send(producerRecord, (RecordMetadata metadata, Exception exception) -> {
-			if (exception == null) {
-				System.out.println("Sucess!");
-				System.out.println(metadata.toString());
-			} else {
-				exception.printStackTrace();
-			}
-		});
-
-		kafkaProducer.flush();
-		kafkaProducer.close();
+		sendAndClose(kafkaProducer, producerRecord);
 	}
 }

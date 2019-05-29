@@ -1,8 +1,8 @@
 package com.github.mackoko.avro.customer;
 
 
-import static com.github.mackoko.avro.util.PropertyUtil.TOPIC_CUSTOMER;
-import static com.github.mackoko.avro.util.PropertyUtil.consumerProperties;
+import static com.github.mackoko.avro.util.KafkaUtil.TOPIC_CUSTOMER;
+import static com.github.mackoko.avro.util.KafkaUtil.consumerProperties;
 
 import java.time.Duration;
 import java.util.Collections;
