@@ -3,25 +3,29 @@
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillBeAdded",
-    "symbols" : ["ONE", "TWO", "THREE"]
+    "symbols" : ["ONE", "TWO", "THREE"],
+    "default" : "TWO"
   },
   {
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillBeRemoved",
-    "symbols" : ["TWO"]
+    "symbols" : ["TWO"],
+    "default" : "TWO"
   },
   {
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillBeRenamed",
-    "symbols" : ["ONE", "DOS"]
+    "symbols" : ["ONE", "DOS"],
+    "default" : "DOS"
   },
   {
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillSwitchOrder",
-    "symbols" : ["TWO", "ONE"]
+    "symbols" : ["TWO", "ONE"],
+    "default" : "TWO"
   },
   {
        "type": "record",

@@ -15,7 +15,7 @@ public class EnumsProducer {
 				new ProducerRecord<>(
 						TOPIC_ENUMS,
 						EnumWrapper.newBuilder()
-								.setEnumWillBeAdded(EnumWillBeAdded.TWO)
+								.setEnumWillBeAdded(EnumWillBeAdded.THREE)
 								.setEnumWillBeRemoved(EnumWillBeRemoved.TWO)
 								.setEnumWillBeRenamed(EnumWillBeRenamed.DOS)
 								.setEnumWillSwitchOrder(EnumWillSwitchOrder.TWO)
