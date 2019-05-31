@@ -9,19 +9,19 @@
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillBeRemoved",
-    "symbols" : ["ONE", "TWO"]
+    "symbols" : ["TWO"]
   },
   {
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillBeRenamed",
-    "symbols" : ["ONE", "TWO"]
+    "symbols" : ["ONE", "DOS"]
   },
   {
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillSwitchOrder",
-    "symbols" : ["ONE", "TWO"]
+    "symbols" : ["TWO", "ONE"]
   },
   {
        "type": "record",

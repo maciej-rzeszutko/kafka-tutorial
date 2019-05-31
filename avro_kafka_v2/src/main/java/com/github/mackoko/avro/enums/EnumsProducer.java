@@ -17,7 +17,7 @@ public class EnumsProducer {
 						EnumWrapper.newBuilder()
 								.setEnumWillBeAdded(EnumWillBeAdded.TWO)
 								.setEnumWillBeRemoved(EnumWillBeRemoved.TWO)
-								.setEnumWillBeRenamed(EnumWillBeRenamed.TWO)
+								.setEnumWillBeRenamed(EnumWillBeRenamed.DOS)
 								.setEnumWillSwitchOrder(EnumWillSwitchOrder.TWO)
 						.build()
 				)
