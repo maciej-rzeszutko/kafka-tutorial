@@ -27,7 +27,6 @@
        "type": "record",
        "namespace": "com.github.mackoko.avro.enums",
        "name": "EnumWrapper",
-       "version": "1",
        "fields": [
          { "name": "enumWillBeAdded", "type": "com.github.mackoko.avro.enums.EnumWillBeAdded", "doc": "" },
          { "name": "enumWillBeRemoved", "type": "com.github.mackoko.avro.enums.EnumWillBeRemoved", "doc": "" },
