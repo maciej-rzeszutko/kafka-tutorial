@@ -1,30 +1,38 @@
 [
   {
-    "version": "2",
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillBeAdded",
     "symbols" : ["ONE", "TWO", "THREE"]
   },
   {
-    "version": "2",
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillBeRemoved",
-    "symbols" : ["ONE"]
+    "symbols" : ["ONE", "TWO"]
   },
   {
-    "version": "2",
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillBeRenamed",
-    "symbols" : ["ONE", "DOS"]
+    "symbols" : ["ONE", "TWO"]
   },
   {
-    "version": "2",
     "type": "enum",
     "namespace": "com.github.mackoko.avro.enums",
     "name": "EnumWillSwitchOrder",
-    "symbols" : ["TWO", "ONE"]
+    "symbols" : ["ONE", "TWO"]
+  },
+  {
+       "type": "record",
+       "namespace": "com.github.mackoko.avro.enums",
+       "name": "EnumWrapper",
+       "version": "2",
+       "fields": [
+         { "name": "enumWillBeAdded", "type": "com.github.mackoko.avro.enums.EnumWillBeAdded", "doc": "" },
+         { "name": "enumWillBeRemoved", "type": "com.github.mackoko.avro.enums.EnumWillBeRemoved", "doc": "" },
+         { "name": "enumWillBeRenamed", "type": "com.github.mackoko.avro.enums.EnumWillBeRenamed", "doc": "" },
+         { "name": "enumWillSwitchOrder", "type": "com.github.mackoko.avro.enums.EnumWillSwitchOrder", "doc": "" }
+       ]
   }
 ]
