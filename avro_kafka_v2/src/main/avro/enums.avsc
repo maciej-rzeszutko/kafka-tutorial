@@ -28,6 +28,13 @@
     "default" : "TWO"
   },
   {
+    "type": "enum",
+    "namespace": "com.github.mackoko.avro.enums",
+    "name": "EnumFoo",
+    "symbols" : ["BAR", "CAR"],
+    "default" : "CAR"
+  },
+  {
        "type": "record",
        "namespace": "com.github.mackoko.avro.enums",
        "name": "EnumWrapper",
@@ -35,7 +42,9 @@
          { "name": "enumWillBeAdded", "type": "com.github.mackoko.avro.enums.EnumWillBeAdded", "doc": "" },
          { "name": "enumWillBeRemoved", "type": "com.github.mackoko.avro.enums.EnumWillBeRemoved", "doc": "" },
          { "name": "enumWillBeRenamed", "type": "com.github.mackoko.avro.enums.EnumWillBeRenamed", "doc": "" },
-         { "name": "enumWillSwitchOrder", "type": "com.github.mackoko.avro.enums.EnumWillSwitchOrder", "doc": "" }
+         { "name": "enumWillSwitchOrder", "type": "com.github.mackoko.avro.enums.EnumWillSwitchOrder", "doc": "" },
+         { "name": "enumFoo", "type": "com.github.mackoko.avro.enums.EnumFoo", "default": "BAR", "doc": "" },
+         { "name": "enumBar", "type": "com.github.mackoko.avro.enums.EnumFoo", "default": "CAR", "doc": "" }
        ]
   }
 ]
