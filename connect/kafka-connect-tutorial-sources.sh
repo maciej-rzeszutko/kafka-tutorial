@@ -23,7 +23,9 @@ docker run --rm -it -v "$(pwd)":/tutorial --net=host landoop/fast-data-dev bash
 # docker run --rm -it -v ${PWD}:/tutorial --net=host landoop/fast-data-dev bash
 
 # we launch the kafka connector in standalone mode:
-cd /tutorial/source/demo-1
+#cd /tutorial/source/demo-1
+cd tutorial/connect/source/demo-1
+
 # create the topic we write to with 3 partitions
 kafka-topics --create --topic demo-1-standalone --partitions 3 --replication-factor 1 --zookeeper 127.0.0.1:2181
 # Usage is connect-standalone worker.properties connector1.properties [connector2.properties connector3.properties]
